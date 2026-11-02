@@ -1,7 +1,6 @@
 # [[https://melpa.org/#/burnish][file:https://melpa.org/packages/burnish-badge.svg]] [[https://stable.melpa.org/#/burnish][file:https://stable.melpa.org/packages/burnish-badge.svg]]
 
 * Burnish ≛
-THIS PROJECT IS WIP.
 
 *Burnish* is an Elisp package that automates the export and viewing of an [[https://orgmode.org/][Org file]]. With *Burnish*, users can rapidly iterate and review changes to an Org file.
 
@@ -83,7 +82,9 @@ If you enjoy using *Burnish*, please consider buying me a coffee to help support
 
 [[https://www.buymeacoffee.com/kickingvegas][http://yummymelon.com/devnull/theme/images/icons/buymecoffee.png]]
 
-  
+
+Please star and share this project to others as well. Thank you!
+
 * Acknowledgments
 
 Thanks goes out to the contributors of Org Mode and GNU Emacs, whose work this builds upon. This work would not be possible without your efforts.
