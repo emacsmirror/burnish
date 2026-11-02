@@ -6,7 +6,7 @@
 #+EMAIL: kickingvegas@gmail.com
 #+OPTIONS: ':t toc:t author:t email:t H:4 f:t
 #+LANGUAGE: en
-#+MACRO: version 0.1.0
+#+MACRO: version 0.1.1-rc.1
 #+MACRO: kbd (eval (org-texinfo-kbd-macro $1))
 #+TEXINFO_FILENAME: burnish.info
 #+TEXINFO_CLASS: casual
@@ -21,8 +21,6 @@
 Version: {{{version}}}
 
 #+TEXINFO: Copyright © 2026 @w{Charles Y. Choi}
-
-THIS DOCUMENT IS WIP.
 
 *Burnish* is an Elisp package that automates the export and viewing of an Org file ([[info:org#Top]]). With *Burnish*, users can rapidly iterate and review changes to an Org file.
 
@@ -125,7 +123,6 @@ Details on commands and customization of *Burnish* can be found in the menu sect
 
 ** Commands
 
-#+VINDEX: burnish
 - Command: burnish ::
   Run the function that exports the Org file and views the result as specified by ~burnish-backend~.
 
@@ -136,7 +133,6 @@ Details on commands and customization of *Burnish* can be found in the menu sect
   - ~burnish-export-functions~ — alist map whose pairs are (SYMBOL FUNCTION), where SYMBOL is a backend key and FUNCTION is its corresponding export function.
 
 
-#+VINDEX: burnish-select-backend
 - Command: burnish-select-backend CHOICE ::
   Prompt the user for CHOICE and set it to the local file variable ~burnish-backend~  in an Org file.
 
@@ -145,7 +141,6 @@ Details on commands and customization of *Burnish* can be found in the menu sect
   This command will either add or update ~burnish-backend~ as detailed in [[info:emacs#Specifying File Variables]].
 
 
-#+VINDEX: burnish-mode
 - Command: burnish-mode ::
   Minor mode to enable automated Org file export and viewing of the result.
 
@@ -219,12 +214,19 @@ Thanks goes out to the contributors of Org Mode and GNU Emacs, whose work this b
 
 Index for this user guide.
 
+* Command Index
+:PROPERTIES:
+:INDEX:    fn
+:END:
+
+Commands and functions referenced by this user guide.
+
 * Variable Index
 :PROPERTIES:
 :INDEX:    vr
 :END:
 
-Variables, functions, commands, and menus referenced by this user guide.
+Variables referenced by this user guide.
 
   # Local Variables:
   # burnish-backend: kvtexinfo

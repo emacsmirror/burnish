@@ -5,7 +5,7 @@
 ;; Author: Charles Y. Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/burnish
 ;; Keywords: tools
-;; Package-Version: 0.1.0
+;; Package-Version: 0.1.1-rc.1
 ;; Package-Requires: ((emacs "30.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -149,7 +149,7 @@ with the `revert-buffer' command.")
 
 ;; Commands
 
-;;;###autoload (autoload 'burnish "burnish" nil t)
+;;;###autoload (autoload 'burnish "burnish" nil '(org-mode))
 (defun burnish ()
   "Run the Org export and view function as specified by `burnish-backend'.
 
@@ -161,7 +161,7 @@ This function is governed by two variables:
 - `burnish-export-functions' — alist map whose pairs are (SYMBOL
   FUNCTION), where SYMBOL is a backend key and FUNCTION is its
   corresponding export function."
-  (interactive)
+  (interactive nil org-mode)
 
   (when (and (derived-mode-p 'org-mode)
              (local-variable-if-set-p 'burnish-backend)
@@ -175,7 +175,7 @@ This function is governed by two variables:
        "burnish-backend: %s is not in burnish-export-functions"
        burnish-backend))))
 
-;;;###autoload (autoload 'burnish-select-backend "burnish" nil t)
+;;;###autoload (autoload 'burnish-select-backend "burnish" nil '(org-mode))
 (defun burnish-select-backend (choice)
   "Set `burnish-backend' to CHOICE in an Org file.
 
@@ -191,7 +191,8 @@ Info node `(emacs) Specifying File Variables'.
 To load the updated value, call `revert-buffer'."
   (interactive (list (completing-read "Choose Target: "
                                       (map-keys burnish-export-functions)
-                                      nil t)))
+                                      nil t))
+               org-mode)
   (if (and (derived-mode-p 'org-mode)
            (not buffer-read-only))
       (save-excursion
@@ -203,7 +204,7 @@ To load the updated value, call `revert-buffer'."
 
 ;; Minor Mode
 
-;;;###autoload (autoload 'burnish-mode "burnish" nil t)
+;;;###autoload (autoload 'burnish-mode "burnish" nil '(org-mode) t)
 (define-minor-mode burnish-mode
   "Minor mode to enable automated Org file export and viewing of the result.
 

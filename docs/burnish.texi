@@ -20,7 +20,7 @@ Copyright © 2026 Charles Y@. Choi
 @finalout
 @titlepage
 @title Burnish User Guide
-@subtitle for version 0.1.0
+@subtitle for version 0.1.1-rc.1
 @author Charles Y@. Choi (@email{kickingvegas@@gmail.com})
 @page
 @vskip 0pt plus 1filll
@@ -33,11 +33,9 @@ Copyright © 2026 Charles Y@. Choi
 @node Top
 @top Burnish User Guide
 
-Version: 0.1.0
+Version: 0.1.1-rc.1
 
 Copyright © 2026 @w{Charles Y. Choi}
-
-THIS DOCUMENT IS WIP@.
 
 @strong{Burnish} is an Elisp package that automates the export and viewing of an Org file (@ref{Top,,,org,}). With @strong{Burnish}@comma{} users can rapidly iterate and review changes to an Org file.
 
@@ -60,6 +58,7 @@ If you enjoy using @strong{Burnish}@comma{} please consider buying me a coffee t
 * About::
 * Acknowledgments::
 * Main Index::
+* Command Index::
 * Variable Index::
 
 @detailmenu
@@ -175,7 +174,6 @@ Details on commands and customization of @strong{Burnish} can be found in the me
 @node Commands
 @section Commands
 
-@vindex burnish
 @deffn Command burnish
 Run the function that exports the Org file and views the result as specified by @code{burnish-backend}.
 
@@ -190,7 +188,6 @@ This function is governed by two variables:
 @end itemize
 @end deffn
 
-@vindex burnish-select-backend
 @deffn Command burnish-select-backend CHOICE
 Prompt the user for CHOICE and set it to the local file variable @code{burnish-backend}  in an Org file.
 
@@ -199,7 +196,6 @@ The prompt supports completion where choices are taken from the keys defined in 
 This command will either add or update @code{burnish-backend} as detailed in @ref{Specifying File Variables,,,emacs,}.
 @end deffn
 
-@vindex burnish-mode
 @deffn Command burnish-mode
 Minor mode to enable automated Org file export and viewing of the result.
 
@@ -299,10 +295,17 @@ Index for this user guide.
 
 @printindex cp
 
+@node Command Index
+@chapter Command Index
+
+Commands and functions referenced by this user guide.
+
+@printindex fn
+
 @node Variable Index
 @chapter Variable Index
 
-Variables@comma{} functions@comma{} commands@comma{} and menus referenced by this user guide.
+Variables referenced by this user guide.
 
 @printindex vr
 
