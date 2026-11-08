@@ -5,7 +5,7 @@
 ;; Author: Charles Y. Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/burnish
 ;; Keywords: tools
-;; Package-Version: 1.0.0
+;; Package-Version: 1.0.1-rc.1
 ;; Package-Requires: ((emacs "30.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -198,7 +198,7 @@ To load the updated value, call `revert-buffer'."
       (save-excursion
         (add-file-local-variable 'burnish-backend (intern choice))
         (save-buffer))
-    (error "Error: burnish-select-backend must be run in an Org file")))
+    (user-error "Error: burnish-select-backend must be run in an Org file")))
 
 
 
@@ -216,13 +216,13 @@ Disabling `burnish-mode' undoes the above.
 
 `burnish-mode' is identified on the mode line with the glyph ‘≛’."
   :init-value nil
-  :lighter "  ≛ "
+  :lighter " ≛"
   :keymap burnish-mode-map
   (if (derived-mode-p 'org-mode)
       (if burnish-mode
           (add-hook 'after-save-hook #'burnish 0 t)
         (remove-hook 'after-save-hook #'burnish t))
-    (error "Minor mode `burnish-mode' only supported for `org-mode'")))
+    (user-error "Minor mode `burnish-mode' only supported for `org-mode'")))
 
 (provide 'burnish)
 ;;; burnish.el ends here
