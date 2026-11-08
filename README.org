@@ -1,4 +1,4 @@
-# [[https://melpa.org/#/burnish][file:https://melpa.org/packages/burnish-badge.svg]] [[https://stable.melpa.org/#/burnish][file:https://stable.melpa.org/packages/burnish-badge.svg]]
+[[https://melpa.org/#/burnish][file:https://melpa.org/packages/burnish-badge.svg]] [[https://stable.melpa.org/#/burnish][file:https://stable.melpa.org/packages/burnish-badge.svg]]
 
 * Burnish ≛
 
